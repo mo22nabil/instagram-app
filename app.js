@@ -96,7 +96,7 @@ const server = app.listen(port,()=>console.log(`server running in port ${port}`)
 
 const io = initIo(server)
 
-io.on('connection',async(socket)=>{
+io.on('connection',(socket)=>{
   console.log(socket.id);
   socket.on('updateSocketID',async (data)=>{
     await userModel.findByIdAndUpdate(data,{socketID:socket.id})
