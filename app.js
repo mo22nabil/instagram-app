@@ -6,18 +6,7 @@ const path = require('path')
 const fs = require('fs') 
 const port = process.env.PORT;
 const app = express(); 
-const cors = require('cors'); 
-// var whitelist = ['http://example1.com', 'http://example2.com']
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
-app.use(cors())
+
 app.use(express.json())
 app.use('/uploads',express.static(path.join(__dirname,'./uploads/')))
 app.use('/api/v1/auth',indexRouter.authRouter)
