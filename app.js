@@ -82,13 +82,10 @@ attachment = fs.readFileSync(path.join(__dirname,'./uploads/pdf/invoice.pdf')).t
 //     }
 // ])
 
-const schedule = require('node-schedule');
 const { initIo } = require("./service/socket");
 const userModel = require("./DB/model/User");
 
-schedule.scheduleJob('40 24 6 * * 2', function(){
-  console.log('The answer to life, the universe, and everything!');
-});
+
 
 connectDB()
 
